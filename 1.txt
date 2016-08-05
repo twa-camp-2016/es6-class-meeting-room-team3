@@ -1,0 +1,24 @@
+1. class Person{
+	constructor({age,sex}){
+	this.age = age;
+	this.sex = sex;
+	}
+}
+
+let '小明' = new Person({age:1},{sex:'男'});
+
+此时，类Person中this指的是 小明 这个对象，let '小明' = new Person({age:1},{sex:'男'}) 这句执行完，小明就有两个属性：age,sex,属性值分别为1，‘男’。 
+
+2. static:
+ class Person{
+	constructor({age,sex}){
+        this.age = age;
+        this.sex = sex;
+        }
+
+      static eat(name){
+		return name + ' age:'+ this.age + ' sex:' + this.sex ;
+	}
+}
+Person.eat(‘小明’)  // 小明 age:1 sex:男
+
